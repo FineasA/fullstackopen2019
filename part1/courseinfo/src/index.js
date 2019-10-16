@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 
 const Header = ({ course }) => {
@@ -33,43 +33,7 @@ const Total = ({ course }) => {
   );
 };
 
-const History = props => {
-  if (props.allClicks.length === 0) {
-    return <div>the app is used by pressing buttons</div>;
-  }
-  return <div>button press history: {props.allClicks.join(' ')}</div>;
-};
-
-const hello = who => console.log('hello', who);
-
-const Button = props => {
-  return <button onClick={props.handleClick}>{props.text}</button>;
-};
-
-const Display = props => {
-  return <div>{props.value}</div>;
-};
-
 const App = () => {
-  // const [counter, setCounter] = useState(0);
-  // const [left, setLeft] = useState(0);
-  // const [right, setRight] = useState(0);
-  // const [allClicks, setAll] = useState([]);
-  const [value, setValue] = useState(10);
-
-  const setToValue = newValue => {
-    setValue(newValue);
-  };
-
-  // const handleLeftClick = () => {
-  //   setAll(allClicks.concat('L'));
-  //   setLeft(left + 1);
-  // };
-
-  // const handleRightClick = () => {
-  //   setAll(allClicks.concat('R'));
-  //   setRight(right + 1);
-  // };
   const course = {
     name: 'Half Stack application development',
     parts: [
@@ -89,27 +53,9 @@ const App = () => {
   };
   return (
     <div>
-      {/* <Header course={course} />
+      <Header course={course} />
       <Content course={course} />
-      <Total course={course} /> */}
-      {/* <Display counter={counter} />
-      <Button clicked={setToValue(counter + 1)} text='plus' />
-      <Button clicked={setToValue(counter - 1)} text='minus' />
-      <Button clicked={setToValue(0)} text='reset' /> */}
-
-      <div>
-        {/* <div>
-          {left}
-          <button onClick={handleLeftClick}>left</button>
-          <button onClick={handleRightClick}>right</button>
-          {right}
-          <History allClicks={allClicks} />
-        </div> */}
-        <Display value={value}></Display>
-        <Button handleClick={() => setToValue(value + 1)} text='increment' />
-        <Button handleClick={() => setToValue(0)} text='reset' />
-        <Button handleClick={() => setToValue(1000)} text='thousand' />
-      </div>
+      <Total course={course} />
     </div>
   );
 };
