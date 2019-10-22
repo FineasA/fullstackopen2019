@@ -38,7 +38,7 @@ const App = () => {
       });
   };
   const rows = () =>
-    notesToShow.map((note, index) => (
+    notesToShow.map(note => (
       <Note
         key={note.id}
         note={note}
@@ -51,7 +51,7 @@ const App = () => {
     const noteObject = {
       content: newNote,
       date: new Date().toISOString(),
-      important: Math.random()m > 0.5
+      important: Math.random() > 0.5
     };
     noteService.create(noteObject).then(returnedNote => {
       setNotes(notes.concat(returnedNote));
