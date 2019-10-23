@@ -15,7 +15,7 @@ const Weather = props => {
         `http://api.weatherstack.com/current?access_key=${access_key}&query=${props.capital}`
       )
       .then(response => {
-        console.log(response.data.current);
+        // console.log(response.data.current);
         setCountryWeather(response.data.current);
         setTemperature(response.data.current.temperature);
         setWeatherIcon(response.data.current.weather_icons[0]);
